@@ -1,0 +1,173 @@
+```css
+/* ==============================================================
+   Global CSS for Micro-Appointment Scheduler
+   ============================================================== */
+
+/* Color palette (primary, secondary, background, text) */
+:root {
+  --color-primary: #0066ff;
+  --color-primary-dark: #0052cc;
+  --color-secondary: #ff6600;
+  --color-bg: #f9fafb;
+  --color-surface: #ffffff;
+  --color-text: #333333;
+  --color-muted: #666666;
+}
+
+/* Reset & base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Utility classes */
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-4 { padding: 1rem; }
+.text-center { text-align: center; }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.bg-primary { background-color: var(--color-primary); color: #fff; }
+.bg-secondary { background-color: var--color-secondary; color: #fff; }
+.rounded { border-radius: 0.5rem; }
+.shadow { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.transition { transition: all 0.2s ease-in-out; }
+.cursor-pointer { cursor: pointer; }
+
+/* Layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: var(--color-surface);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Main content area */
+.main {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-surface);
+  padding: 1rem 2rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .header, .footer {
+    padding: 1rem;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+.btn-secondary:hover {
+  background-color: #e65c00;
+}
+
+/* Form elements */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0,102,255,0.2);
+}
+
+/* Toast container (will be rendered by a component) */
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.toast {
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-weight: 500;
+  animation: slideIn 0.3s ease-out;
+}
+.toast-success { background-color: #10b981; }
+.toast-error { background-color: #ef4444; }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+```
